@@ -1,0 +1,7 @@
+'registered user, bonus under limit';100060;true;30
+'registered user, bonus over limit';100000060;true;500
+'unregistered user, bonus under limit';100060;false;10
+'unregistered user, bonus over limit';100000060;false;500
+'registered user, no bonus';500;true;0
+'unregistered user, no bonus';500;false;0
+

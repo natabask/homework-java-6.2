@@ -1,15 +1,14 @@
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import ru.netology.bonus.BonusService;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class BonusServiceTest {
 
-    @org.junit.jupiter.api.Test
-    void shouldCalculateForRegisteredAndUnderLimit() {
+    @ParameterizedTest
+    void shouldCalculateForRegisteredAndUnderLimit(String testName, long amount, boolean registered, long expected) {
         BonusService service = new BonusService();
-
-        // подготавливаем данные:
-        long amount = 1000_60;
-        boolean registered = true;
-        long expected = 30;
 
         // вызываем целевой метод:
         long actual = service.calculate(amount, registered);
@@ -18,7 +17,7 @@ public class BonusServiceTest {
         assertEquals(expected, actual);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void shouldCalculateForRegisteredAndOverLimit() {
         BonusService service = new BonusService();
 
